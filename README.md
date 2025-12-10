@@ -1,16 +1,15 @@
 # pwa_notes_improved
 
-A new Flutter project.
+A Flutter project for PWA final exam preparation.
+This project consist of these materials:
+- PWA 4: Widget
+- PWA 5: Interactivity & Local State
+- PWA 6: Navigation & Global State
+- PWA 7: API Connectivity
+- PWA 11: Theming and Typhography
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Notes
+This project is made using Flutter. These are the steps to make it from scratch:
+- `flutter create pwa_notes_improved`: create a new Flutter project named pwa_notes_improved
+- `flutter pub add provider http`: add a 'HTTP' and 'Provider' dependencies
+- `flutter run`: to run the project. If you are using VSCode and you have an emulator, you can try to run it via top panel 'Run' then choose 'Run Without Debugging'
