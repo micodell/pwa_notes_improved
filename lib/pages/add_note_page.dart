@@ -5,7 +5,6 @@ import '../providers/notes_provider.dart';
 
 class AddNotePage extends StatefulWidget {
   const AddNotePage({super.key});
-
   @override
   State<AddNotePage> createState() => _AddNotePageState();
 }
@@ -30,43 +29,40 @@ class _AddNotePageState extends State<AddNotePage> {
       return;
     }
     setState(() => _saving = true);
-    // create note and add to provider
     final note = Note(title: title, body: body.isEmpty ? null : body);
     context.read<NotesProvider>().addNote(note);
-    // simulate small delay (optional)
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future.delayed(const Duration(milliseconds: 150));
     setState(() => _saving = false);
-    Navigator.pop(context, note);
+    Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Note'),
+        title: const Text('Tambah Catatan'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: _titleC,
-              decoration: const InputDecoration(labelText: 'Title'),
+              decoration: const InputDecoration(labelText: 'Judul'),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: _bodyC,
-              decoration: const InputDecoration(labelText: 'Body (optional)'),
-              keyboardType: TextInputType.multiline,
+              decoration: const InputDecoration(labelText: 'Isi (opsional)'),
               maxLines: 5,
             ),
             const SizedBox(height: 20),
             _saving
                 ? const CircularProgressIndicator()
                 : ElevatedButton.icon(
-                    icon: const Icon(Icons.save),
-                    label: const Text('Save'),
                     onPressed: _save,
+                    icon: const Icon(Icons.save),
+                    label: const Text('Simpan'),
                   ),
           ],
         ),

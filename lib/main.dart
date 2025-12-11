@@ -22,24 +22,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProv = context.watch<ThemeProvider>();
-    final baseLight = ThemeData(
-      useMaterial3: true,
+
+    final light = ThemeData(
       brightness: Brightness.light,
+      useMaterial3: true,
       primarySwatch: Colors.blue,
-      // Optional: set text theme, fonts here
+      textTheme: const TextTheme(
+        titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        bodyMedium: TextStyle(fontSize: 14),
+      ),
     );
 
-    final baseDark = ThemeData(
-      useMaterial3: true,
+    final dark = ThemeData(
       brightness: Brightness.dark,
+      useMaterial3: true,
       primarySwatch: Colors.blue,
+      textTheme: const TextTheme(
+        titleLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        bodyMedium: TextStyle(fontSize: 14),
+      ),
     );
 
     return MaterialApp(
       title: 'Notes PWA',
       debugShowCheckedModeBanner: false,
-      theme: baseLight,
-      darkTheme: baseDark,
+      theme: light,
+      darkTheme: dark,
       themeMode: themeProv.themeMode,
       home: const HomePage(),
     );

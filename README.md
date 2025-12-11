@@ -11,5 +11,5 @@ This project consist of these materials:
 ## Notes
 This project is made using Flutter. These are the steps to make it from scratch:
 - `flutter create pwa_notes_improved`: create a new Flutter project named pwa_notes_improved
-- `flutter pub add provider http`: add a 'HTTP' and 'Provider' dependencies
+- `flutter pub add provider http shared_preferences`: add a 'HTTP', 'Provider', 'Shared Preferences' dependencies
 - `flutter run`: to run the project. If you are using VSCode and you have an emulator, you can try to run it via top panel 'Run' then choose 'Run Without Debugging'

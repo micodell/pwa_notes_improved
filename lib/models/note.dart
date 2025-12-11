@@ -13,7 +13,7 @@ class Note {
 
   factory Note.fromJson(Map<String, dynamic> json) {
     return Note(
-      id: json['id'] is int ? json['id'] : int.tryParse('${json['id']}'),
+      id: json['id'] is int ? json['id'] as int : int.tryParse('${json['id']}'),
       title: json['title'] ?? '',
       body: json['body'] ?? json['body'] ?? null,
       createdAt: DateTime.now(),
@@ -21,9 +21,9 @@ class Note {
   }
 
   Map<String, dynamic> toJson() => {
-      'id': id,
-      'title': title,
-      'body': body,
-      'createdAt': createdAt.toIso8601String(),
-    };
+    'id': id,
+    'title': title,
+    'body': body,
+    'createdAt': createdAt.toIso8601String(),
+  };
 }
